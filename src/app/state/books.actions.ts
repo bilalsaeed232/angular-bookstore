@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+import { Book } from "../models/book.model";
 
 
 export const addBook = createAction(
@@ -17,11 +18,11 @@ export const loadBooks = createAction(
 
 export const loadBooksSuccess = createAction(
     '[Book List/API] Load Books Success',
-    props<{ Book }>()
+    props<{ books: Book[] }>()
 );
 
 export const loadBooksFailure = createAction(
     '[Book List/API] Load Books Failure',
-    props<{ Book }>()
+    props<{ errorMsg: string }>()
 );
 

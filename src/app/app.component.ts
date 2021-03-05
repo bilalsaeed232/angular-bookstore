@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { GoogleBooksService } from './core/books.service';
 import { AppState } from './state/app.state';
-import { addBook, removeBook, loadBooksSuccess } from './state/books.actions';
+import { addBook, loadBooks, removeBook } from './state/books.actions';
 import { selectBookCollection, selectBooks } from './state/books.selectors';
 
 @Component({
@@ -15,7 +14,6 @@ export class AppComponent implements OnInit {
   collection$ = this.store.pipe(select(selectBookCollection));
 
   constructor(
-    private booksService: GoogleBooksService,
     private store: Store<AppState>
     ) {
 
@@ -30,10 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.booksService.getBooks()
-      .subscribe(Book => {
-        this.store.dispatch(loadBooksSuccess({Book}))
-      })
+    this.store.dispatch(loadBooks());
   }
   
 

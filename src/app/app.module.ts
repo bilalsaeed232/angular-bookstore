@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { CollectionListComponent } from './components/collection-list/collection
 import { booksReducer } from './state/books.reducer';
 import { collectionReducer } from './state/collection.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { BookEffects } from './state/book.effects';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+    EffectsModule.forRoot([BookEffects]),
     StoreModule.forRoot({ books: booksReducer, collection: collectionReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 35,
