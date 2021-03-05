@@ -5,10 +5,14 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { CollectionListComponent } from './components/collection-list/collection-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookListComponent,
+    CollectionListComponent
   ],
   imports: [
     BrowserModule,
