@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { GoogleBooksService } from './core/books.service';
+import { AppState } from './state/app.state';
 import { addBook, removeBook, retrievedBookList } from './state/books.actions';
 import { selectBookCollection, selectBooks } from './state/books.selectors';
 
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private booksService: GoogleBooksService,
-    private store: Store
+    private store: Store<AppState>
     ) {
 
   }
