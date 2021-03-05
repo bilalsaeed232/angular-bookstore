@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { CollectionListComponent } from './components/collection-list/collection-list.component';
+import { booksReducer } from './state/books.reducer';
+import { collectionReducer } from './state/collection.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { CollectionListComponent } from './components/collection-list/collection
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ books: booksReducer, collection: collectionReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 35,
       logOnly: environment.production
