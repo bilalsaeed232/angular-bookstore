@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CollectionListComponent implements OnInit {
   @Input() books;
-  @Output remove = new EventEmitter();
+  @Output() remove = new EventEmitter();
 
   constructor() { }
 

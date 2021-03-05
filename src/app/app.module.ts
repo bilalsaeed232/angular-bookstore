@@ -9,6 +9,7 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { CollectionListComponent } from './components/collection-list/collection-list.component';
 import { booksReducer } from './state/books.reducer';
 import { collectionReducer } from './state/collection.reducer';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { collectionReducer } from './state/collection.reducer';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     StoreModule.forRoot({ books: booksReducer, collection: collectionReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 35,
