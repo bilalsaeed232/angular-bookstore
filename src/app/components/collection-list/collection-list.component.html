@@ -1,1 +1,6 @@
-<p>collection-list works!</p>
+<ul>
+    <li *ngFor="let book of books">
+        <em>{{books.volumeInfo.title}}</em>
+        <button (click)="remove.emit(book.id)">Remove</button>
+    </li>
+</ul>

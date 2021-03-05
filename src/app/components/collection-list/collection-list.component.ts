@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'bs-collection-list',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./collection-list.component.css']
 })
 export class CollectionListComponent implements OnInit {
+  @Input() books;
+  @Output remove = new EventEmitter();
 
   constructor() { }
 
