@@ -11,8 +11,17 @@ export const removeBook = createAction(
     props<{ bookId }>()
 );
 
-export const retrievedBookList = createAction(
-    '[Book List/API] Retrieve Books Success ',
+export const loadBooks = createAction(
+    '[Book List/API] Load Books',
+);
+
+export const loadBooksSuccess = createAction(
+    '[Book List/API] Load Books Success',
+    props<{ Book }>()
+);
+
+export const loadBooksFailure = createAction(
+    '[Book List/API] Load Books Failure',
     props<{ Book }>()
 );
 
