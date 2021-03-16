@@ -1,4 +1,5 @@
-# NgrxBookstore
+# Bookstore
+List and find any book on the internet and save it to your personal collection, **Google books API** is used for book data.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
